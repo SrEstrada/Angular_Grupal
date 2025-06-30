@@ -1,1 +1,24 @@
-<p>game works!</p>
+<h1>Juego del Ahorcado</h1>
+
+<div class="word">
+  <span *ngFor="let letter of word.split('')">
+    {{ isLetterVisible(letter) ? letter : '_' }}
+  </span>
+</div>
+
+<div class="keyboard">
+  <button 
+    ngFor="let letter of 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('')" 
+    (click)="guess(letter)" 
+    [disabled]="guessedLetters.includes(letter) || gameOver">
+    {{ letter }}
+  </button>
+</div>
+
+<p>Errores: {{ errors }} / {{ maxErrors }}</p>
+
+<divngIf="gameOver">
+  <p ngIf="win">🎉 ¡Ganaste!</p>
+  <pngIf="!win">💀 Perdiste. La palabra era: {{ word }}</p>
+  <button (click)="startGame()">Reiniciar</button>
+</div>
