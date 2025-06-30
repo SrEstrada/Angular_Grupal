@@ -1,0 +1,16 @@
+.word {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.keyboard button {
+  margin: 2px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 40px;
+}
+
+p {
+  font-size: 1.2rem;
+}
