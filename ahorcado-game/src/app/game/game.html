@@ -15,6 +15,7 @@
   </button>
 </div>
 
+<img [src]="'/assets/ahorcado/' + errors + '.png'" alt="Ahorcado" width="200" />
 <p>Errores: {{ errors }} / {{ maxErrors }}</p>
 
 <div *ngIf="gameOver">

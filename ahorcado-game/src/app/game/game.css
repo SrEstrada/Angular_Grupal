@@ -1,16 +1,89 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+/* Título */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Palabra oculta */
 .word {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Teclado */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  max-width: 600px;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .keyboard button {
-  margin: 2px;
   padding: 10px;
   font-size: 1rem;
-  width: 40px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
+.keyboard button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.keyboard button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Imagen del ahorcado */
+img {
+  margin: 20px 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Contador de errores */
 p {
   font-size: 1.2rem;
+  color: #333;
+}
+
+/* Mensajes de fin del juego */
+div[ngIf] {
+  text-align: center;
+}
+
+div[ngIf] p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #28a745;
+  color: white;
+}
+
+button:hover {
+  background-color: #218838;
 }
