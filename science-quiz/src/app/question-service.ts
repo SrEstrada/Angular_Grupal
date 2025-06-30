@@ -23,4 +23,11 @@ export class QuestionService {
  getQuestions() {
  return this.questions;
  }
+ getQuestion(index: number) {
+    return this.questions[index];
+  }
+
+  getTotalQuestions() {
+    return this.questions.length;
+  }
 }

@@ -1,1 +1,14 @@
-<p>question works!</p>
+<h2>{{ question.question }}</h2>
+
+<ul>
+  <li *ngFor="let option of question.options">
+    <button (click)="selectOption(option)" [disabled]="showFeedback">{{ option }}</button>
+  </li>
+</ul>
+
+<div *ngIf="showFeedback">
+  <p [style.color]="correct ? 'green' : 'red'">
+    {{ correct ? '¡Correcto!' : 'Incorrecto. La respuesta correcta es: ' + question.correctAnswer }}
+  </p>
+  <button (click)="nextQuestion()">Siguiente</button>
+</div>
