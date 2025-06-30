@@ -1,6 +1,6 @@
-<h2>{{ question.question }}</h2>
+<h2>{{ question?.question }}</h2>
 
-<ul>
+<ul *ngIf="question">
   <li *ngFor="let option of question.options">
     <button (click)="selectOption(option)" [disabled]="showFeedback">{{ option }}</button>
   </li>

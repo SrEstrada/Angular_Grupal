@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from '../question-service';
+import { CommonModule } from '@angular/common'; // IMPORTANTE
 
 @Component({
   selector: 'app-question',
-  imports: [],
+  imports: [CommonModule], // IMPORTANTE
   templateUrl: './question.html',
   styleUrl: './question.css'
 })
@@ -25,6 +26,11 @@ export class Question {
     this.route.params.subscribe(params => {
       this.questionIndex = +params['id'];
       this.question = this.questionService.getQuestion(this.questionIndex);
+
+      //resetear el estado de la pregunta
+      this.selectedOption = null;
+      this.showFeedback = false;
+      this.correct = false;
     });
   }
 
