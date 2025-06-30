@@ -8,7 +8,7 @@
 
 <div class="keyboard">
   <button 
-    ngFor="let letter of 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('')" 
+    *ngFor="let letter of 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('')" 
     (click)="guess(letter)" 
     [disabled]="guessedLetters.includes(letter) || gameOver">
     {{ letter }}
@@ -17,8 +17,8 @@
 
 <p>Errores: {{ errors }} / {{ maxErrors }}</p>
 
-<divngIf="gameOver">
-  <p ngIf="win">🎉 ¡Ganaste!</p>
-  <pngIf="!win">💀 Perdiste. La palabra era: {{ word }}</p>
+<div *ngIf="gameOver">
+  <p *ngIf="win">🎉 ¡Ganaste!</p>
+  <p *ngIf="!win">💀 Perdiste. La palabra era: {{ word }}</p>
   <button (click)="startGame()">Reiniciar</button>
 </div>
